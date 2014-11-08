@@ -21,8 +21,6 @@ maincss
     paddingLeft: CSSC.px 20
     paddingRight: CSSC.px 20
 
-  .add '.opac',
-    opacity: 0.5
+  .add '.opac', opacity: 0.5
 
-  .add '.active',
-    color: CSSC.red
+  .add '.active', color: CSSC.red
