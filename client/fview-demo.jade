@@ -1,0 +1,59 @@
+head
+  meta(name='viewport', content='width=device-width, maximum-scale=1, user-scalable=no')
+
+template(name='layout')
+  +HeaderFooterLayout headerSize=50
+    +Modifier target="header" template="header" translate="[0,0,10]"
+    +Modifier target="content"
+      +yield
+  +StateModifier template="menu" proportions="[.66,1]" translate=menuTranslate
+  +yield region="pageHelper"
+
+template(name="menu")
+  +Surface class="green-bg"
+    | hello there
+
+template(name="header")
+  +Surface class="header"
+    div#header
+      span famous-views demo
+  +Surface template="headerIcon" modifier="StateModifier" rotateZ=headerIconRotate origin="[.5,.5]" size="[20,20]" translate="[31,24]"
+
+template(name="headerIcon")
+  +if menuOpen
+    i#headerIcon(class="fa fa-arrow-right")
+  else
+    i#headerIcon(class="fa fa-bars")
+
+template(name='home')
+  +Scrollview direction="X" size="[undefined,undefined]" paginated="true" id="homeScroll"
+    +Surface class="padding"
+      h1 Welcome to the App
+      p Swipe left and right to change pages.
+      p Tap the menu icon in the top left to open the menu
+      img(src="http://www.infinitetiers.com/express-your-screen/images/swipe_left-right-ls.png")
+      p
+        | Image courtesy of
+        a(href="http://www.infinitetiers.com/express-your-screen/") www.infinitetiers.com
+    +Surface
+      | Page 2
+    +Surface
+      | Page 3
+
+//- this is a bit crazy, better to make a new view and wrap it, e.g. a
+//- {{#pageIndicator}}; but still fun to show what you can do all in templates :>
+
+template(name="homePageIndicator")
+  +StateModifier size="[undefined,50]" align="[0,1]" origin="[0,1]" translate="[0,0,10]"
+    +Surface size="[43,43]" align="[.5,.5]" origin="[.5,.5]" translate="[-70,0]" class="{{isActive 0}}" modifier="StateModifier"
+      span.fa-stack.fa-lg.opac
+        i.fa.fa-circle.fa-stack-2x
+        i.fa.fa-bar-chart.fa-stack-1x.fa-inverse
+    +Surface size="[43,43]" align="[.5,.5]" origin="[.5,.5]" translate="[0,0]" class="{{isActive 1}}" modifier="StateModifier"
+      span.fa-stack.fa-lg.opac
+        i.fa.fa-circle.fa-stack-2x
+        i.fa.fa-user.fa-stack-1x.fa-inverse
+    +Surface size="[43,43]" align="[.5,.5]" origin="[.5,.5]" translate="[70,0]" class="{{isActive 2}}" modifier="StateModifier"
+      span.fa-stack.fa-lg.opac
+        i.fa.fa-circle.fa-stack-2x
+        i.fa.fa-beer.fa-stack-1x.fa-inverse
