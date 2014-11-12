@@ -1,6 +1,7 @@
 FView.ready ->
-  @Easing = famous.transitions.Easing
   @Transform = famous.core.Transform
+  @Modifier = famous.core.Modifier
+  @Easing = famous.transitions.Easing
 
 Router.configure layoutTemplate: 'layout'
 
@@ -36,6 +37,7 @@ Template.homePageIndicator.helpers
     scrollview = FView.byId 'homeScroll'
     currentIndex = scrollview.properties.get 'index'
     return '' unless currentIndex is Number index
+    #return ''
 
     # this is the wrong place and wrong way to do this, but it works great :>
     modifier = (FView.from Blaze.getView()).children[index].modifier

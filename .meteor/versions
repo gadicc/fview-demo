@@ -16,7 +16,8 @@ deps@1.0.5
 ejson@1.0.4
 fastclick@1.0.1
 follower-livedata@1.0.2
-gadicohen:famous-views@0.1.22
+gadicohen:famous-views@0.1.24
+gadicohen:fview-lagometer@1.0.0
 geojson-utils@1.0.1
 html-tools@1.0.2
 htmljs@1.0.2
@@ -27,15 +28,15 @@ iron:controller@1.0.0
 iron:core@1.0.0
 iron:dynamic-template@1.0.0
 iron:layout@1.0.0
-iron:location@1.0.1
+iron:location@1.0.0
 iron:middleware-stack@1.0.0
-iron:router@1.0.1
+iron:router@1.0.0
 iron:url@1.0.0
 jag:pince@0.0.5
 jquery@1.0.1
 json@1.0.1
 launch-screen@1.0.0
-linto:fontawesome@4.2.2
+linto:fontawesome@1.0.1
 livedata@1.0.11
 logging@1.0.5
 meteor-platform@1.2.0
@@ -47,7 +48,7 @@ mongo@1.0.8
 mquandalle:jade@0.2.8
 observe-sequence@1.0.3
 ordered-dict@1.0.1
-pierreeric:cssc-colors@1.0.2
+pierreeric:cssc-colors@1.0.3
 pierreeric:cssc-famous@1.0.1
 pierreeric:cssc-normalize@1.0.1
 pierreeric:cssc@1.0.3
