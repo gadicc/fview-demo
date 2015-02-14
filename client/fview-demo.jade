@@ -8,12 +8,13 @@ head
 body
 
 template(name='layout')
-  +HeaderFooterLayout headerSize=50
-    +Modifier target="header" template="header" translate="[0,0,10]"
-    +Modifier target="content"
-      +yield
-  +StateModifier template="menu" proportions="[.66,1]" translate=menuTranslate
-  +yield region="pageHelper"
+  +famousContext id="mainCtx"
+    +HeaderFooterLayout headerSize=50
+      +Modifier target="header" template="header" translate="[0,0,10]"
+      +Modifier target="content"
+        +yield
+    +StateModifier template="menu" proportions="[.66,1]" translate=menuTranslate
+    +yield region="pageHelper"
 
 template(name="menu")
   +Surface class="green-bg"
@@ -41,7 +42,7 @@ template(name='home')
       p
         | Image courtesy of
         a(href="http://www.infinitetiers.com/express-your-screen/") www.infinitetiers.com
-    +Surface
+    +Surface class="padding"
       | Page 2
     +Surface
       | Page 3

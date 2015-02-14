@@ -40,7 +40,7 @@ Template.homePageIndicator.helpers
     #return ''
 
     # this is the wrong place and wrong way to do this, but it works great :>
-    modifier = (FView.from Blaze.getView()).children[index].modifier
+    modifier = (FView.from Blaze.getView()).modifier
     currentX = modifier.getTransform()[12]
     modifier.halt()
     modifier.setTransform (Transform.translate currentX, -20),
